@@ -1,0 +1,62 @@
+body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 300px;
+    background-color: #f4f4f4;
+margin: 0 auto;
+}
+
+.wrapper{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.output{
+    font-size: 21px;
+    font-weight: 900;
+    font-family: monospace;
+}
+
+.game-pad{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game-pad .pad{
+    width: 100px;
+    height: 50px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+.btn{ 
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 300ms;
+    outline: none;
+    border: none;
+}
+
+.btn-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover{
+    background-color: #e4e4e4;
+    
+}
+
+.size{
+    width: 100%;
+    height: 30px;
+    background-color: black;
+}

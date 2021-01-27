@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<body>
+    <div class="container">
+        <div class="wrapper" id="wrap">
+            <label class="output">
+               
+            </label>
+            <div class="game-pad">
+                <input type="text" class="you pad"></input>
+                <label style="padding: 0 10px;">vs.</label>
+                <input type="text" class="enemy pad"></input>
+            </div>
+            <div class="btn-wrap">
+            <button class="btn" onclick="practice(0);">Rock</button>
+            <button class="btn" onclick="practice(1);">Paper</button>
+            <button class="btn" onclick="practice(2);">Scissor</button>
+            <!--<button class="btn" onclick="practice(3);">Stone</button>-->
+            </div>
+        </div>
+    </div>
+<script>
+
+/*$(function(){
+        
+       $('#btn').on('click', function(){
+            $('#text').fadeToggle();
+       });
+        
+});*/
+/*function addcont(){
+    var newEL = document.createElement('button');
+    var wrap = document.getElementById('wrap');
+    newEL.classList.add('size');
+    wrap.appendChild(newEL);
+}*/
+
+const you = document.querySelector('.you');
+const enemy = document.querySelector('.enemy');
+const output = document.querySelector('.output');
+var rps = ['rock','paper','scissor'];
+
+
+function practice(num){
+
+    var rand =  Math.floor(Math.random() * 2) + 0;
+    var text = document.getElementById('text');
+    you.value = rps[num];
+    enemy.value = rps[rand];
+    output.style.color = '#000';
+    
+    if(num == 0){
+        if(rand == 0 ){
+            output.innerHTML = "DRAW";
+        }
+        else if(rand == 1){
+            output.innerHTML = "LOSE";
+            output.style.color = 'red';
+        }
+        else {
+            output.innerHTML = "WIN";
+        }
+    }
+    else if(num == 1){
+        if(rand == 0 ){
+            output.innerHTML = "WIN";
+        }
+        else if(rand == 1){
+            output.innerHTML = "DRAW";
+        }
+        else {
+            output.innerHTML = "LOSE";
+            output.style.color = 'red';
+        }
+    }
+    else if(num == 2){
+        if(rand == 0 ){
+            output.innerHTML = "LOSE";
+            output.style.color = 'red';
+        }
+        else if(rand == 1){
+            output.innerHTML = "WIN";
+        }
+        else {
+            output.innerHTML = "DRAW";
+        }
+    }
+
+}
+
+
+
+</script>
+</body>
+</html>
