@@ -31,7 +31,7 @@ body{
 }
 .game-pad .pad{
     width: 100px;
-    height: 50px;
+    height: 100px;
     background-color: #fff;
     text-align: center;
     display: flex;
@@ -41,7 +41,7 @@ body{
 }
 
 .pad i{
-    font-size: 32px;
+    font-size: 80px;
 }
 .fa-hand-rock{
     color:#b29700;
