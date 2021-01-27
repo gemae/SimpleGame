@@ -46,8 +46,8 @@ const you = document.querySelector('.you');
 const enemy = document.querySelector('.enemy');
 const output = document.querySelector('.output');
 var rps = ['rock','paper','scissor'];
-
-
+you.disabled = true;
+enemy.disabled = true;
 function practice(num){
 
     var rand =  Math.floor(Math.random() * 2) + 0;
