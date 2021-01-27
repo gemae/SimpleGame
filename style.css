@@ -1,21 +1,23 @@
 body{
-    position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    margin: 50px 0;
 }
 .container{
     width: 300px;
     background-color: #f4f4f4;
-margin: 0 auto;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 90%;
+    border-radius: 20px;
 }
 
 .wrapper{
     text-align: center;
-    padding-top: 20px;
 }
 
 .output{
-    font-size: 21px;
+    font-size: 35px;
     font-weight: 900;
     font-family: monospace;
 }
@@ -25,34 +27,83 @@ margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 .game-pad .pad{
     width: 100px;
     height: 50px;
     background-color: #fff;
     text-align: center;
-    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
+
+.pad i{
+    font-size: 32px;
+}
+.fa-hand-rock{
+    color:#b29700;
+}
+.rock{
+    background-color:#b29700;
+}
+.fa-hand-paper{
+    color:#ffdbac;
+}
+.paper{
+    background-color: #ffdbac;
+}
+.fa-hand-scissors{
+    color:#ff6700;
+}
+.scissors{
+    background-color: #ff6700;
+}
+.score-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: monospace;
+}
+.score-wrapper h3{
+    font-size: 14px;
+    font-weight: 300;
+    padding: 5px 10px;
+    background-color: gray;
+    color: #fff;
+}
+.score-wrapper div{
+    text-align: center;
+}
+.score-wrapper span{
+    font-size: 14px;
+    font-weight: bold;
+}
 .btn{ 
-    width: 130px;
-    height: 130px;
-    margin: 10px;
+    width: 110px;
+    height: 110px;
+    margin-top: 10px;
     cursor: pointer;
     transition: 300ms;
     outline: none;
     border: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: lowercase;
+    letter-spacing: 1px;
 }
 
 .btn-wrap{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 button:hover{
-    background-color: #e4e4e4;
+    opacity: .8;
     
 }
 

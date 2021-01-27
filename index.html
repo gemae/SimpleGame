@@ -5,27 +5,40 @@
         <link type="text/css" rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     </head>
 
 <body>
+   
     <div class="container">
+        <div class="score-wrapper">
+            <div class="y">
+                <h3>You</h3>
+                <span class="score-you"></span>
+            </div>
+            <div class="e">
+                <h3>Opp.</h3>
+                <span class="score-enemy"></span>
+            </div>
+        </div>
         <div class="wrapper" id="wrap">
-            <label class="output">
+            <span class="output">
                
-            </label>
+            </span>
             <div class="game-pad">
-                <input type="text" class="you pad"></input>
+                <div type="text" class="you pad"><i class=""></i></div>
                 <label style="padding: 0 10px;">vs.</label>
-                <input type="text" class="enemy pad"></input>
+                <div type="text" class="enemy pad"><i class=""></i></div>
             </div>
             <div class="btn-wrap">
-            <button class="btn" onclick="practice(0);">Rock</button>
-            <button class="btn" onclick="practice(1);">Paper</button>
-            <button class="btn" onclick="practice(2);">Scissor</button>
+            <button class="btn rock" onclick="practice(0);">Rock</button>
+            <button class="btn paper" onclick="practice(1);">Paper</button>
+            <button class="btn scissors" onclick="practice(2);">Scissor</button>
             <!--<button class="btn" onclick="practice(3);">Stone</button>-->
             </div>
         </div>
     </div>
+    
 <script>
 
 /*$(function(){
@@ -45,15 +58,25 @@
 const you = document.querySelector('.you');
 const enemy = document.querySelector('.enemy');
 const output = document.querySelector('.output');
-var rps = ['rock','paper','scissor'];
+const scoreyou = document.querySelector('.score-you');
+const scoreenemy = document.querySelector('.score-enemy');
+var rps = ['fa-hand-rock','fa-hand-paper','fa-hand-scissors'];
+var win = 0;
+var lose = 0;
+scoreyou.innerHTML = win;
+scoreenemy.innerHTML = lose;
 you.disabled = true;
 enemy.disabled = true;
 function practice(num){
 
     var rand =  Math.floor(Math.random() * 2) + 0;
     var text = document.getElementById('text');
-    you.value = rps[num];
-    enemy.value = rps[rand];
+    you.firstElementChild.className = "";
+    enemy.firstElementChild.className = "";
+    you.value = you.firstElementChild.classList.add('fas');
+    you.value = you.firstElementChild.classList.add(rps[num]);
+    enemy.value = enemy.firstElementChild.classList.add('fas');
+    enemy.value = enemy.firstElementChild.classList.add(rps[rand]);
     output.style.color = '#000';
     
     if(num == 0){
@@ -63,14 +86,19 @@ function practice(num){
         else if(rand == 1){
             output.innerHTML = "LOSE";
             output.style.color = 'red';
+            loseFunc();
         }
         else {
-            output.innerHTML = "WIN";
+            output.innerHTML = "WIN!";
+            output.style.color = '#45b6fe';
+            winFunc();
         }
     }
     else if(num == 1){
         if(rand == 0 ){
-            output.innerHTML = "WIN";
+            output.innerHTML = "WIN!";
+            output.style.color = '#45b6fe';
+            winFunc();
         }
         else if(rand == 1){
             output.innerHTML = "DRAW";
@@ -78,24 +106,33 @@ function practice(num){
         else {
             output.innerHTML = "LOSE";
             output.style.color = 'red';
+            loseFunc();
         }
     }
     else if(num == 2){
         if(rand == 0 ){
             output.innerHTML = "LOSE";
             output.style.color = 'red';
+            loseFunc();
         }
         else if(rand == 1){
-            output.innerHTML = "WIN";
+            output.innerHTML = "WIN!";
+            output.style.color = '#45b6fe';
+            winFunc();
         }
         else {
             output.innerHTML = "DRAW";
         }
     }
-
+ function winFunc(){
+    win++;
+    scoreyou.innerHTML = win;
+ }
+ function loseFunc(){
+    lose++;
+    scoreenemy.innerHTML = lose;
 }
-
-
+}
 
 </script>
 </body>
